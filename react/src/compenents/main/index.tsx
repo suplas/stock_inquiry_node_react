@@ -8,8 +8,8 @@ class RootComponent extends React.Component {
     return (
       <div className="table w-full h-full table-fixed bg-gray-100">
         <div className="table-row border-b-2 bg-white">
-          <div className="h-16">
-            <div className="text-cente fixed top-0 w-full">
+          <div className="h-12">
+            <div className="text-cente fixed top-0 left-0 right-0 w-full bg-white">
               <HeaderComponent />
             </div>
           </div>
@@ -20,7 +20,7 @@ class RootComponent extends React.Component {
           </div>
           <div className="max-w-screen-md ml-auto mr-auto h-full"></div>
         </div>
-        <div className="bg-white fixed w-full bottom-0 border-2 border-gray-200 rounded-t-3xl">
+        <div className="bg-white fixed w-full bottom-0 border-2 border-gray-200">
           <div className="h-16">
             <FooterComponent />
           </div>

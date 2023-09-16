@@ -1,9 +1,43 @@
 import React from "react";
-
+import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class ContentComponent extends React.Component {
   render(): React.ReactNode {
-    return "컨텐츠 컴포넌트 들어갈 공간";
-  };
+    return (
+      <div className="mt-4 pl-2 pr-2">
+        <div className="flex gap-3">
+          <div className="bg-white w-full ml-auto mr-auto flex p-2">
+            <div className="w-full">
+              <div className="font-bold text-base">코스피</div>
+              <div className="text-red-600 font-bold text-base">2,601,28</div>
+              <div className="text-xs text-gray-400">09.15 기준</div>
+            </div>
+            <div className="ml-auto w-full text-right pt-7">
+              <div className="text-red-600 text-xs leading-5">
+                <span className="mr-2"><FontAwesomeIcon icon={faCaretUp}/></span>
+                1.10%
+              </div>
+              <div className="text-red-600 text-xs">28.39</div>
+            </div>
+          </div>
+          <div className="bg-white w-full ml-auto mr-auto flex p-2">
+            <div className="w-full">
+              <div className="font-bold">코스닥</div>
+              <div className="text-blue-600 font-bold">899.03</div>
+              <div className="text-xs text-gray-400">09.15 기준</div>
+            </div>
+            <div className="ml-auto w-full text-right pt-7 leading-5">
+              <div className="text-blue-600 text-xs">
+              <span className="mr-2"><FontAwesomeIcon icon={faCaretDown} /></span>
+                0.05%
+              </div>
+              <div className="text-blue-600 text-xs">0.44</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default ContentComponent;
