@@ -6,7 +6,7 @@ class BannerComponent extends React.Component {
   render(): React.ReactNode {
     return (
       <div className="flex gap-2">
-        <div className="bg-white w-full ml-auto mr-auto flex p-2">
+        <div className="bg-white w-full ml-auto mr-auto flex p-4">
           <div className="w-full">
             <div className="font-bold text-base">코스피</div>
             <div className="text-red-600 font-bold text-base">2,601,28</div>
@@ -22,7 +22,7 @@ class BannerComponent extends React.Component {
             <div className="text-red-600 text-xs">28.39</div>
           </div>
         </div>
-        <div className="bg-white w-full ml-auto mr-auto flex p-2">
+        <div className="bg-white w-full ml-auto mr-auto flex p-4">
           <div className="w-full">
             <div className="font-bold">코스닥</div>
             <div className="text-blue-600 font-bold">899.03</div>
