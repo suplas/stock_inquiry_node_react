@@ -9,7 +9,9 @@ module.exports = {
     extends:{}
   },
   theme: {
-    extend: {},
+    flex: {
+      myFlex: '1 1 53%',
+    },
   },
   plugins: [],
 }
