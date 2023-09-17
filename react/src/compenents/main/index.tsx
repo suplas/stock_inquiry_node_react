@@ -1,7 +1,7 @@
 import React from "react";
-import HeaderComponent from "./headerComponent";
+import HeaderComponent from "../public/headerComponent";
 import ContentComponent from "./contentComponent";
-import FooterComponent from "./footerComponent";
+import FooterComponent from "../public/footerComponent";
 
 class RootComponent extends React.Component {
   render() {
