@@ -11,7 +11,7 @@ class StockItemListComponent extends React.Component<Props> {
     const { title } = this.props;
     return (
       <div className="bg-white w-full">
-        <div className="h-full mt-2 p-2 w-full border-b-2 border-gray-100">
+        <div className="h-full mt-2 p-2 w-full border-gray-100">
           <div className="flex w-full p-2">
             <h2>{title}</h2>
           </div>

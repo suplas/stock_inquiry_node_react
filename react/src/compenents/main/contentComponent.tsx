@@ -9,7 +9,7 @@ class ContentComponent extends React.Component {
       <div className="mt-3 pl-2 pr-2">
         <BannerComponent />
         <StockItemListComponent title={"관심종목"} />
-        <TalkComponent title={"토론방"}/>
+        <TalkComponent title={"토론방 >"} />
         <StockItemListComponent title={"종목정보"} />
       </div>
     );
