@@ -10,20 +10,18 @@ module.exports = {
     flex: {
       myFlex: "1 1 53%",
     },
-    extend: {
-      keyframes: {
-        rolling: {
-          "0%": {
-            transform: "translateX(0px)",
-          },
-          "100%": {
-            transform: "translateX(-1400px)",
-          },
+    keyframes: {
+      rolling: {
+        "0%": {
+          transform: "translateX(0px)",
+        },
+        "100%": {
+          transform: "translateX(-1400px)",
         },
       },
-      animation: {
-        slider: 'slider 5s linear infinite'
-      }
+    },
+    animation: {
+      slider: "slider 5s linear infinite",
     },
   },
   plugins: [],
