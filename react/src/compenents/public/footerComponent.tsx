@@ -20,19 +20,19 @@ class FooterComponent extends React.Component {
             </Link>
           </div>
           <div className="ml-auto mr-auto text-center text-gray-400 w-11">
-            <Link to={"/"}>
+            <Link to={"/information"}>
               <FontAwesomeIcon icon={faChartSimple} size={"lg"} />
               <div className="text-xs">종목정보</div>
             </Link>
           </div>
           <div className="ml-auto mr-auto text-center text-gray-400  w-11">
-            <Link to={"/"}>
+            <Link to={"/interest"}>
               <FontAwesomeIcon icon={faStar} size={"lg"} />
               <div className="text-xs text-center">관심종목</div>
             </Link>
           </div>
           <div className="ml-auto mr-auto text-center text-gray-400 w-11">
-            <Link to={"/"}>
+            <Link to={"/talk"}>
               <FontAwesomeIcon icon={faCommentDots} size={"lg"} />
               <div className="text-xs text-center">토론방</div>
             </Link>

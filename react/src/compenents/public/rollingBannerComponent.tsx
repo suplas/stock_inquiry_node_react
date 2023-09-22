@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { item } from "./item";
-import styled from "styled-components";
 
 interface Props {
   title: string;
@@ -30,7 +29,7 @@ const useInterval: IUseInterval = (callback, interval) => {
   }, [interval]);
 };
 
-function RollingBannerComponent(props: Props) {
+const RollingBannerComponent = (props: Props) => {
   const [slideIndex, setSlideIndex] = useState(1);
 
   const outRef = useRef<HTMLDivElement>(null);
@@ -52,12 +51,12 @@ function RollingBannerComponent(props: Props) {
     custominterval
   );
 
-  if (slideIndex === 10) {
+  if (slideIndex === SLIDE_NUM + 2 - 1) {
     if (slideRef.current) {
       slideRef.current.style.transition = "";
     }
 
-    setSlideIndex(1);
+    setSlideIndex(0);
 
     setTimeout(() => {
       if (slideRef.current) {
@@ -72,7 +71,7 @@ function RollingBannerComponent(props: Props) {
         slideRef.current.style.transition = "";
       }
 
-      setSlideIndex(4);
+      setSlideIndex(1);
 
       setTimeout(() => {
         if (slideRef.current) {
@@ -82,17 +81,13 @@ function RollingBannerComponent(props: Props) {
     }, 500);
   }
 
-  const slideHandler = (direction: number) => {
-    setSlideIndex((slideIndex) => slideIndex + direction);
-  };
-
   const stopSlide = () => {
     setCustominterval(10000);
   };
 
   const restartSlide = () => {
-    if (slideIndex === 5) {
-      setCustominterval(1500);
+    if (slideIndex === SLIDE_NUM + 2) {
+      setCustominterval(500);
     } else {
       setCustominterval(3000);
     }
@@ -109,8 +104,8 @@ function RollingBannerComponent(props: Props) {
   }, [custominterval]);
 
   useEffect(() => {
-    if (slideIndex === 5) {
-      setCustominterval(1500);
+    if (slideIndex === SLIDE_NUM + 2) {
+      setCustominterval(500);
     } else {
       setCustominterval(3000);
     }
@@ -120,10 +115,7 @@ function RollingBannerComponent(props: Props) {
   return (
     <div className="bg-white mt-2 flex items-center px-[1rem] pb-2 pt-2">
       <div className="font-bold">{title}</div>
-      <div
-        className="relative overflow-hidden z-10 group"
-        ref={outRef}
-      >
+      <div className="relative overflow-hidden z-10 group" ref={outRef}>
         <div
           className="flex"
           ref={slideRef}
@@ -138,7 +130,7 @@ function RollingBannerComponent(props: Props) {
           {copiedArr.map((item, index) => (
             <div
               key={index}
-              className="relative h-30 sm:h-30 lg:w-screen lg:h-30"
+              className="relative h-full sm:h-full lg:w-full lg:h-full"
             >
               <div className="px-[5%] font-bold top-1/2 flex gap-1">
                 <div className="font-bold">{item.createDate}</div>
@@ -151,6 +143,6 @@ function RollingBannerComponent(props: Props) {
       </div>
     </div>
   );
-}
+};
 
 export default RollingBannerComponent;

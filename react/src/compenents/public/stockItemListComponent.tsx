@@ -4,11 +4,27 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
-    title:string
+  title: string;
+  isMore: boolean;
 }
 class StockItemListComponent extends React.Component<Props> {
   render(): React.ReactNode {
-    const { title } = this.props;
+    const { title, isMore } = this.props;
+
+    const moreBtn = (isMore: boolean) => {
+      if (isMore === true) {
+        return (
+          <li className="flex gap-1 p-2 items-center border-gray-100">
+            <div className="w-full text-center p-2">
+              <Link to={"/"}>
+                더보기 <FontAwesomeIcon icon={faChevronRight} />
+              </Link>
+            </div>
+          </li>
+        );
+      }
+    };
+
     return (
       <div className="bg-white w-full">
         <div className="h-full mt-2 p-2 w-full border-gray-100">
@@ -78,13 +94,7 @@ class StockItemListComponent extends React.Component<Props> {
                 <div className="text-sm font-bold">69,800</div>
               </div>
             </li>
-            <li className="flex gap-1 p-2 items-center border-gray-100">
-              <div className="w-full text-center p-2">
-                <Link to={"/"}>
-                  더보기 <FontAwesomeIcon icon={faChevronRight} />
-                </Link>
-              </div>
-            </li>
+            {moreBtn(isMore)}
           </ul>
         </div>
       </div>
