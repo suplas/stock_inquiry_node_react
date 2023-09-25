@@ -4,13 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mysql_1 = __importDefault(require("mysql"));
+require("dotenv").config();
 class Database {
     constructor() {
         this.connection = mysql_1.default.createConnection({
-            host: "127.0.0.1",
-            user: "root",
-            password: "root",
-            database: "stock",
+            host: process.env.DB_HOST,
+            user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
+            database: process.env.DB_DATABASE,
         });
     }
     connect() {
@@ -24,7 +25,7 @@ class Database {
         });
     }
     query(sql, values, callback) {
-        this.connection.query(sql, values, callback);
+        console.log(this.connection.query(sql, values, callback));
     }
     insert(data, table) {
         const sql = "INSERT INTO " + table + " SET ?";
