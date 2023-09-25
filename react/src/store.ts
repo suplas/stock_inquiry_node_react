@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./reducers";
+import pagingReducer from "./reducers/pagingSlice";
 
 
 const store = configureStore({
-  reducer : rootReducer
+  reducer : {
+    paging: pagingReducer,
+  } 
 });
 
 export default store;
